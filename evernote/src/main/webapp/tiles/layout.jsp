@@ -17,6 +17,11 @@ html,body {
 #side{
 	padding:0;
 }
+div.showSide{
+	width:150px;
+	z-index:1;
+	backgroung-color:rgba(0,0,0,0.5);
+}
 
 
 </style>
@@ -63,25 +68,29 @@ html,body {
  let sideMenu = document.getElementById('side');
  let content = document. getElementById('content');
  
- window.addEventListener('load',showSide);
- window.addEventListener('resize',showSide);
+ window.addEventListener('load',hideSide);
+ window.addEventListener('resize',hideSide);
  
- function showSide(){
+ function hideSide(){
 	 width = document.body.clientWidth;
 	 let menuIcon = document.getElementById('menuIcon');
 	 if(width <= 1000){
-		 sideMenu.remove();
+		 sideMenu.style.display='none';
 		 content.className = "col-lg-12";
 		 menuIcon.style.display ='';
 	 }else if(width >= 1000){
 		 menuIcon.style.display ='none';
+		 sideMenu.style.display='';
+		 content.className = "col-lg-10";
 	 }
  }
  
  function side(){
-	 sideMenu.style.display = '';
-	 sideMenu.className='';
-	 sideMenu.style.width='30%';
+	 content.className = "col-lg-12";
+	 content.style.position='absolute';
+	 
+	 sideMenu.ClassName='showSide';
+	 document.getElementById('contentWraper').append(sideMenu);
  }
 	
 	
