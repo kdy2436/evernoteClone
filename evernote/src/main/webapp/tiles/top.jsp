@@ -30,11 +30,13 @@
 		
 	}
 	
+	#modal
+	
 </style>
 
 <nav class="navbar" id="nav">
 <span>
- <svg id ="menuIcon" class="bi bi-justify align-top" width="2.5em" height="2.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+ <svg onclick="side()" id ="menuIcon" class="bi bi-justify align-top" width="2.5em" height="2.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M2 12.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
 </svg>
   <a class="navbar-brand" href="#"><pre>SaeRok<br>    Note</pre></a>

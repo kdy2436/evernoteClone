@@ -17,6 +17,8 @@ html,body {
 #side{
 	padding:0;
 }
+
+
 </style>
 <!-- 부트스트랩 -->
 <script type="text/javascript"
@@ -35,54 +37,7 @@ html,body {
 <meta charset="UTF-8">
 <title></title>
 
-<script>
 
-/*****
- * 화면 크기가 테블릿 크기가 될 때에는 사이드 메뉴바를 숨긴다.
- */	
- $(document).ready(function(){
-	 $('#menuIcon').css('display','none');
-		var windowWidth = $(window).width();
-		if(windowWidth <=1000){
-			hideSide();				
-	}else if(windowWidth >=1000){
-		$('#menuIcon').css('display','none');
-	}
-	})
-		
-	$(window).resize(function(){
-		var windowWidth = $(window).width();
-		if(windowWidth <= 1000){
-			hideSide();
-			
-		}else if(windowWidth >= 1200){
-			showSide();
-		}
-	})
-	
-	//사이드바를 숨긴다.
-	function hideSide(){
-		$('#side').css('display','none');
-		$('#content').removeClass('col-lg-10');
-		$('#content').attr('class','col-lg-12');
-		addMenuBtn();
-		
-	}
-	
-	//사이드바를 나타낸다.
-	function showSide(){
-		$('#side').css('display','');
-		$()
-	}
-	
-	function addMenuBtn(){
-		$('#menuIcon').css('display','');
-		$('#menuIcon').click(showSide);
-		
-	}
-	
-	
-</script>
 
 </head>
 <body>
@@ -98,6 +53,39 @@ html,body {
 			<tiles:insertAttribute name="content" />
 		</div>
 	</div>
+
+<script>
+
+/*****
+ * 화면 크기가 테블릿 크기가 될 때에는 사이드 메뉴바를 숨긴다.
+ */
+ let width;
+ let sideMenu = document.getElementById('side');
+ let content = document. getElementById('content');
+ 
+ window.addEventListener('load',showSide);
+ window.addEventListener('resize',showSide);
+ 
+ function showSide(){
+	 width = document.body.clientWidth;
+	 let menuIcon = document.getElementById('menuIcon');
+	 if(width <= 1000){
+		 sideMenu.remove();
+		 content.className = "col-lg-12";
+		 menuIcon.style.display ='';
+	 }else if(width >= 1000){
+		 menuIcon.style.display ='none';
+	 }
+ }
+ 
+ function side(){
+	 sideMenu.style.display = '';
+	 sideMenu.className='';
+	 sideMenu.style.width='30%';
+ }
+	
+	
+</script>
 
 </body>
 </html>
